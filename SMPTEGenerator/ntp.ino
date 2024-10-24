@@ -83,8 +83,14 @@ int setAndWriteNtp(float fs, String _tz) {
   return setNtp(fs, _tz);
 }
 
+
+static time_t lastTime = 0;
+
+void forceNTP() {
+  lastTime = 0;
+}
+  
 bool ntp_loop() {
-  static time_t lastTime = 0;
   static bool needssetup = true;
 
   if (needssetup) {
