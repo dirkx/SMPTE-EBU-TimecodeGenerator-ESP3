@@ -50,7 +50,7 @@ void handleRoot(void)
                 String("Local time: ") + String(ctime(&now)) + String("<br>") +
                 String("Browser time: <span id='ts'>here</span><p>") +
                 String("<form method=post>") +
-                String("Current Timezone definition: <input name = 'tz' value = '") + String(tz) + String("' size = 40> timezone or a <a href = 'https://ublications.opengroup.org/c181'>POSIX TM definition string </a>.<br>") +
+                String("Current Timezone definition: <input name = 'tz' value = '") + String(tz) + String("' size = 40> timezone or a <a href = 'https://publications.opengroup.org/c181'>POSIX TM definition string </a>.<br>") +
                 String("Examples: <ul>") +
                 String("  <li>CET-1CEST,M3.5.0,M10.5.0/3") +
                 String("  <li>PST8PST") +
@@ -78,4 +78,5 @@ void handleRoot(void)
     return;
   }
   server.send(200, "textbrlain", "Ok, config stored.");
+  forceNTP();
 }
